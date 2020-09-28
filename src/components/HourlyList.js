@@ -12,7 +12,7 @@ export default ( props ) => {
 
         props.data.hourly.forEach( ( hour, index ) => {
             if( index % 3 === 0 && format( fromUnixTime( props.data.current.dt ), 'ccc' ) === format( fromUnixTime( hour.dt ), 'ccc' ) ) {
-                hours.push( <Grid item xs={2} key={index}>
+                hours.push( <Grid item xs={4} sm={2} key={index}>
                                 <Hour hourData={hour} isLoading={props.isLoading} />
                             </Grid> );
             }
