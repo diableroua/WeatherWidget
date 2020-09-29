@@ -16,7 +16,7 @@ function App( ) {
     const getData = async ( ) => {
         const position = await currentPosition( );
 
-        axios.get( `https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&exclude=daily,minutely,alerts&units=metric&appid=9513327ef1c0e9a24697b2274f3dd4de` )
+        axios.get( `https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&exclude=daily,minutely,alerts&units=metric&appid=${process.env.REACT_APP_OPENWEATHERMAP_APIKEY}` )
         .then( function( response ) {
             setData( response.data );
             setLoading( false );
